@@ -4,7 +4,7 @@ set -ex
 set -o allexport
 
 ########### ENV VARS ###########
-FLAG=HTB{placeholder}
+FLAG=HTB{Pectra_UpGr4d3_c4uSed_4_sp3cTraL_bL@cK0Ut_1n_V0LnaYa}
 HANDLER_PORT=8000
 LOCAL_RPC_PORT=5000
 ANVIL_LOGFILE="/var/log/ctf/anvil_output.log"

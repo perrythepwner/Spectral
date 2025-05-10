@@ -12,8 +12,8 @@ class Config:
     ANVIL_LOGFILE: str = "/var/log/ctf/anvil_output.log"
     FLAG: str = os.getenv("FLAG", "HTB{placeholder}")
     
-    # @TODO: change this
     ALLOWED_NAMESPACES: list = ["web3", "eth", "net"]
+    HARDFORK: str = "prague"
     RECEIPT_POLL_INTERVAL: float = 0.1
     N_ACCOUNTS: int = 2
     N_BOTS: int = 0

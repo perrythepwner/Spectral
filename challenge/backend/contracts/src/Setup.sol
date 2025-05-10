@@ -1,22 +1,24 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity ^0.8.28;
+pragma solidity ^0.8.29;
 
-import { ChallengeName } from "./ChallengeName.sol";
+import { VCNK } from "./VCNK.sol";
 
 contract Setup {
-    ChallengeName public TARGET;
+    VCNK public TARGET;
     address public player;
 
     event DeployedTarget(address at);
 
     constructor(address _player) {
-        TARGET = new ChallengeName();
+        TARGET = new VCNK();
         player = _player;
         emit DeployedTarget(address(TARGET));
     }
 
-    function isSolved() public returns (bool) {
-        return false // @TODO: change this 
+    function isSolved() public view returns (bool) {
+        uint8 CU_STATUS_EMERGENCY = 3;
+        (uint8 status, , ,) = TARGET.controlUnit();
+        return status == CU_STATUS_EMERGENCY;
     }
 }

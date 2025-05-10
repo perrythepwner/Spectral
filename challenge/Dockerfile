@@ -46,8 +46,8 @@ RUN true \
     && forge build --out ./compiled \
     && true
 
-EXPOSE 8888 # @TODO: change this
-EXPOSE 8000 # @TODO: change this
+EXPOSE 8888
+EXPOSE 8000
 
 USER root
 WORKDIR /home/ctf/

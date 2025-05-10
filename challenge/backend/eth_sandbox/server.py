@@ -117,6 +117,7 @@ def launch_node() -> Dict:
         proc = subprocess.Popen(
             args=[
                 "anvil",
+                "--hardfork", Config.HARDFORK,
                 "--accounts", str(Config.N_ACCOUNTS + Config.N_BOTS),
                 "--balance", "0",
                 "--mnemonic", mnemonic,
@@ -153,7 +154,7 @@ def launch_node() -> Dict:
         web3.provider.make_request('anvil_setBalance', [bot_acct.address, hex(Web3.to_wei(Config.BOT_BALANCE, 'ether'))])
 
     # deploy contracts
-    setupAddress = deploy(web3, deployer_acct.address, ["0xdeadfade", player_address]) # @TODO: change this
+    setupAddress = deploy(web3, deployer_acct.address, [player_acct.address])
     targetAddress = getChallengeAddress(web3, setupAddress)
 
     node_info = {
@@ -186,7 +187,7 @@ def get_node_info() -> Dict:
 
 def is_solved_checker(web3: Web3) -> bool:
     node_info = get_node_info()
-    web3.provider.make_request("anvil_impersonateAccount", [node_info["playerAddress"]]) # @TODO: change this
+    web3.provider.make_request("anvil_impersonateAccount", [node_info["playerAddress"]])
     result = web3.eth.call({
         "from": node_info["playerAddress"],
         "to": node_info["setupAddress"],

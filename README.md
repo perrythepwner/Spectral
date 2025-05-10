@@ -1,5 +1,4 @@
-# ChallengeName
-# @TODO: change this
+# Spectral
 
 ![img](./assets/ChallengeBanner.png)
 ---
