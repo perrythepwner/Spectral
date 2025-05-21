@@ -154,7 +154,7 @@ def launch_node() -> Dict:
         web3.provider.make_request('anvil_setBalance', [bot_acct.address, hex(Web3.to_wei(Config.BOT_BALANCE, 'ether'))])
 
     # deploy contracts
-    setupAddress = deploy(web3, deployer_acct.address, [player_acct.address])
+    setupAddress = deploy(web3, deployer_acct.address, [])
     targetAddress = getChallengeAddress(web3, setupAddress)
 
     node_info = {
