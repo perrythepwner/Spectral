@@ -9,7 +9,7 @@
 15<sup>th</sup> Mar 2024 \
 Prepared By: perrythepwner \
 Challenge Author(s): **perrythepwner** \
-Difficulty: <font color=light-green>Very-Easy</font>
+Difficulty: <font color=green>Easy</font>
 
 ---
 
@@ -53,4 +53,4 @@ Difficulty: <font color=light-green>Very-Easy</font>
 see the full exploitation script [here](./htb/solver.py).
 
 ---
-> `HTB{placeholder}`
+> `HTB{Pectra_UpGr4d3_c4uSed_4_sp3cTraL_bL@cK0Ut_1n_V0LnaYa}`
