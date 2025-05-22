@@ -14,10 +14,10 @@ Difficulty: <font color=green>Easy</font>
 ---
 
 # TLDR
-The `VCNK.sol` contract acts as a power plant, delivering on-demand power delivery to arbitrary contracts implementing the `vcnkCompatibleReceiver` interface. The `VCNK` contract is missing CEI pattern in the `requestPowerDelivery` function, and the `require(msg.sender == tx.origin)` reentrancy guard is obsolete after the EVM Pectra upgrade, making it vulnerable to reentrancy attack and allowing the attacker to trigger Emergency Mode on the power plant.
+The `VCNK.sol` contract acts as a power plant, delivering on-demand power to arbitrary contracts that implements the `vcnkCompatibleReceiver` interface. The `VCNK` contract is missing CEI pattern in the `requestPowerDelivery` function, and the `require(msg.sender == tx.origin)` reentrancy guard is obsolete after the EVM Pectra upgrade, making it vulnerable to reentrancy attack and allowing an attacker to trigger Emergency Mode on the power plant.
 
 # Description
-> A new nuclear power plant called "VCNK" has been built in Volnaya, and now the power of the energy lobby is higher than ever. You have been assigned to Operation "Blockout" and your mission is to find a way to disrupt the power plant to slow them down. See you in the dark!
+> A new nuclear power plant called "VCNK" has been built in Volnaya, and now the dominance of the energy lobby is now stronger than ever. You have been assigned to Operation "Blockout" and your mission is to find a way to disrupt the power plant to slow them down. See you in the dark!
 
 # Skills Required
 - Basic understanding of Solidity and smart contracts
